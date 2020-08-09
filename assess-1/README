@@ -1,0 +1,2 @@
+###Notes###
+There is Supervisord daemon tool available which has been used here to monitor and start/restart/stop services or process management.

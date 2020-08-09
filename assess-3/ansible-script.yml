@@ -1,0 +1,14 @@
+---
+- name: Copying required scripts over to remote machine for execution.
+  remote_user: root
+  hosts: localhost
+  tasks:
+     - name: Copy relevant scripts to remote directories
+       copy: src=/opt/scripts/assess-3/{{ item }} dest=/opt/scripts
+       with_items:
+         - secureserver.sh
+         - ubuntu.sh
+         - redhat.sh
+ 
+     - name: Execute the script
+       command: sh /opt/scripts/secureserver.sh
